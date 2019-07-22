@@ -26,12 +26,19 @@ export default {
     async login(){
       const res = await this.$http.post('admin/login', this.model)
       // sessionStorage.token = res.data.token
-      localStorage.token = res.data.data.token
-      this.$router.push('/')
-      this.$message({
-        type: 'success',
-        message: '登录成功'
-      })
+      if (res.data.data.code == 401) {
+        this.$message({
+          type: "error",
+          message: "用户名或密码错误",
+        })
+      } else {
+        localStorage.token = res.data.data.token
+        this.$router.push('/')
+        this.$message({
+          type: 'success',
+          message: '登录成功'
+        })
+      }
     }
   }
 }

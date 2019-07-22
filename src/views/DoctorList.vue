@@ -3,13 +3,14 @@
     <h1>管理员列表</h1>
     <el-table :data="items">
       <el-table-column prop="id" label="ID" width="240"></el-table-column>
+      <el-table-column prop="name" label="姓名"></el-table-column>
       <el-table-column prop="username" label="用户名"></el-table-column>
       <el-table-column fixed="right" label="操作" width="180">
         <template slot-scope="scope">
           <el-button
             type="text"
             size="small"
-            @click="$router.push(`/admin/edit/${scope.row.id}`)"
+            @click="$router.push(`/doctor/edit/${scope.row.id}`)"
           >编辑</el-button>
           <el-button type="text" size="small" @click="remove(scope.row)">删除</el-button>
         </template>
@@ -27,7 +28,7 @@ export default {
   },
   methods: {
     async fetch() {
-      const res = await this.$http.get("users/3");
+      const res = await this.$http.get("users/2");
       this.items = res.data.data.items;
     },
     remove(row) {

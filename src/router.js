@@ -4,6 +4,9 @@ import Login from './views/Login.vue'
 import Main from './views/Main'
 import AdminList from './views/AdminList'
 import AdminEdit from './views/AdminEdit'
+import DoctorList from './views/DoctorList'
+import DoctorEdit from './views/DoctorEdit'
+
 
 
 
@@ -20,6 +23,10 @@ const router = new Router({
         { path: '/admin/list', component: AdminList},
         { path: '/admin/create', component: AdminEdit},
         { path: '/admin/edit/:id', component: AdminEdit, props: true},
+
+        { path: '/doctor/list', component: DoctorList},
+        { path: '/doctor/create', component: DoctorEdit},
+        { path: '/doctor/edit/:id', component: DoctorEdit, props: true},
       ]
     }
   ]
