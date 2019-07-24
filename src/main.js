@@ -4,6 +4,10 @@ import './plugins/element.js'
 import router from './router'
 
 import './style.css'
+import Video from 'video.js'
+import 'video.js/dist/video-js.css'
+
+Vue.prototype.$video = Video
 
 Vue.config.productionTip = false
 
@@ -13,13 +17,13 @@ Vue.prototype.$http = http
 Vue.mixin({
   computed: {
     uploadUrl(){
-      return this.$http.defaults.baseURL + '/upload'
+      return this.$http.defaults.baseURL + 'upload'
     }
   },
   methods: {
     getAuthHeaders(){
       return {
-        Authorization: `Bearer ${localStorage.token || ''}`
+        Authorization: `${localStorage.token || ''}`
       }
     }
   }

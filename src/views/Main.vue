@@ -22,6 +22,16 @@
             <el-menu-item index="/doctor/list">医生列表</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
+        <el-submenu index="3">
+          <template slot="title">
+            <i class="el-icon-message"></i>视频管理
+          </template>
+          <el-menu-item-group>
+            <template slot="title">视频管理</template>
+            <el-menu-item index="/video/create">添加视频</el-menu-item>
+            <el-menu-item index="/video/list">视频列表</el-menu-item>
+          </el-menu-item-group>
+        </el-submenu>
       </el-menu>
     </el-aside>
 

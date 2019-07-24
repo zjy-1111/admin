@@ -3,7 +3,7 @@ import Vue from 'vue'
 import router from './router'
 
 const http = axios.create({
-  baseURL: 'http://localhost:8000/'
+  baseURL: 'http://127.0.0.1:8000/'
 })
 http.interceptors.request.use(function (config) {
   // Do something before request is sent
